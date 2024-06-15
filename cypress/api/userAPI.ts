@@ -1,9 +1,10 @@
 import User from "../models/user"
+import 'cypress-plugin-api'
 
 export default class UserAPI {
 
     register(user: User) {
-        return   cy.request({
+        return   cy.api({
             method: "POST",
             url: "/api/v1/users/register",
             body: {

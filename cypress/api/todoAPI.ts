@@ -1,8 +1,9 @@
 import User from "../models/user"
+import 'cypress-plugin-api'
 
 export default class ToDoAPI {
     addToDo(user: User) {
-        cy.request({
+        cy.api({
             method: "POST",
             url: "/api/v1/tasks",
             body: {
