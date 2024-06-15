@@ -15,6 +15,10 @@ export default class ToDoPage {
     return '[data-testid="no-todos"]'
   }
 
+  private get checkToDoTask() {
+    return '[data-testid="complete-task"]'
+  }
+
   load() {
     cy.visit("/todo")
   }
@@ -33,5 +37,9 @@ export default class ToDoPage {
 
   getNoToDosMessage() {
     return cy.get(this.noToDosMessage)
+  }
+
+  getCheckToDoTask() {
+    return cy.get(this.checkToDoTask).check()
   }
 }

@@ -31,4 +31,11 @@ describe("Todo Test cases", () => {
     toDoPage.deleteToDo()
     toDoPage.getNoToDosMessage().should("be.visible")
   })
+
+  it.only("Should be able to check a todo", () => {
+    newToDoPage.addToDoUsingAPI(user)
+    toDoPage.load()
+    toDoPage.getToDoItem().should("contain.text", "Learn Cypress")
+    toDoPage.getCheckToDoTask().should("be.checked")
+  })
 })
