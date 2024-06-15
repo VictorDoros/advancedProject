@@ -2,7 +2,6 @@ import User from "../models/user"
 import UserAPI from "../api/userAPI"
 
 export default class RegisterPage {
-    
   private get firstNameInput() {
     return "[data-testid='first-name']"
   }
@@ -40,7 +39,7 @@ export default class RegisterPage {
   }
 
   registerUsingAPI(user: User) {
-    return new UserAPI().register(user).then(response => {
+    return new UserAPI().register(user).then((response) => {
       user.setToken(response.body.access_token)
     })
   }
