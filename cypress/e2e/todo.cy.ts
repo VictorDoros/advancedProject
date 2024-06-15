@@ -32,7 +32,7 @@ describe("Todo Test cases", () => {
     toDoPage.getNoToDosMessage().should("be.visible")
   })
 
-  it.only("Should be able to check a todo", () => {
+  it("Should be able to check a todo", () => {
     newToDoPage.addToDoUsingAPI(user)
     toDoPage.load()
     toDoPage.getToDoItem().should("contain.text", "Learn Cypress")
