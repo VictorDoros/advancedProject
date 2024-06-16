@@ -3,7 +3,7 @@ import "cypress-plugin-api"
 
 export default class ToDoAPI {
   addToDo(user: User) {
-    cy.api({
+    cy.step("Add ToDo task with API").api({
       method: "POST",
       url: "/api/v1/tasks",
       body: {

@@ -15,5 +15,8 @@
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-plugin-api": "^2.11.1",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "cypress-plugin-steps": "^1.1.1"
   }
 }

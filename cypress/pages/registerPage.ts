@@ -26,15 +26,27 @@ export default class RegisterPage {
   }
 
   load() {
+    cy.step("Visit the 'Sign up' page")
     cy.visit("/signup")
   }
 
   register(user: User) {
+    cy.step("Fill in the 'First Name' field")
     cy.get(this.firstNameInput).type(user.getFirstName())
+
+    cy.step("Fill in the 'Last Name' field")
     cy.get(this.lastNameInput).type(user.getLastName())
+
+    cy.step("Fill in the 'Email' field")
     cy.get(this.emailInput).type(user.getEmail())
+
+    cy.step("Fill in the 'Password' field")
     cy.get(this.passwordInput).type(user.getPassword())
+
+    cy.step("Fill in the 'Confirm Password' field")
     cy.get(this.confirmPasswordInput).type(user.getPassword())
+
+    cy.step("Hit the [Submit] button")
     cy.get(this.submitButton).click()
   }
 
