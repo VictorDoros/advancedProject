@@ -20,26 +20,28 @@ export default class ToDoPage {
   }
 
   load() {
+    cy.step("Visit the page")
     cy.visit("/todo")
   }
 
   getWelcomeMessage() {
-    return cy.get(this.welcomeMessage)
+    return cy.step("Confirm registration").get(this.welcomeMessage)
   }
 
   getToDoItem() {
-    return cy.get(this.todoItem)
+    return cy.step("Confirm the presence of the item").get(this.todoItem)
   }
 
   deleteToDo() {
+    cy.step("Delete the item")
     cy.get(this.deleteButton).click()
   }
 
   getNoToDosMessage() {
-    return cy.get(this.noToDosMessage)
+    return cy.step("Confirm the item is removed").get(this.noToDosMessage)
   }
 
   getCheckToDoTask() {
-    return cy.get(this.checkToDoTask).check()
+    return cy.step("Check the task and confirm it's checked").get(this.checkToDoTask).check()
   }
 }

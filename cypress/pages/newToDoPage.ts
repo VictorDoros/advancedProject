@@ -11,11 +11,15 @@ export default class NewToDoPage {
   }
 
   load() {
+    cy.step("Visit the page")
     cy.visit("/todo/new")
   }
 
   addToDo(task: string) {
+    cy.step("Type a new ToDo task")
     cy.get(this.newToDoInput).type(task)
+
+    cy.step("Submit the ToDo task")
     cy.get(this.newToDoSubmitButton).click()
   }
 

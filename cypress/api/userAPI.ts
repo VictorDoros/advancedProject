@@ -3,7 +3,7 @@ import "cypress-plugin-api"
 
 export default class UserAPI {
   register(user: User) {
-    return cy.api({
+    return cy.step("Register with API").api({
       method: "POST",
       url: "/api/v1/users/register",
       body: {
