@@ -7,6 +7,10 @@ const {
 export default defineConfig({
   e2e: {
     reporter: "cypress-mochawesome-reporter",
+    "env": {
+      "grepFilterSpecs": true,
+      "grepOmitFiltered": true,
+    },
     baseUrl: "https://todo.qacart.com",
     setupNodeEvents(on, config) {
       on("before:run", async (details) => {
@@ -18,6 +22,9 @@ export default defineConfig({
         console.log("override after:run")
         await afterRunHook()
       })
+
+      require('@cypress/grep/src/plugin')(config);
+      return config;
     },
   },
 })

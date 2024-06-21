@@ -3,7 +3,7 @@ import ToDoPage from "../pages/todoPage"
 import NewToDoPage from "../pages/newToDoPage"
 import RegisterPage from "../pages/registerPage"
 
-describe("Todo Test cases", () => {
+describe("Todo Test cases", { tags: ["toDo"] }, () => {
   let user: User
   let registerPage: RegisterPage
   let toDoPage: ToDoPage
